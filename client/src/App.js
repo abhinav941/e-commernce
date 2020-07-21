@@ -1,13 +1,13 @@
 import React from 'react';
 import { Component } from 'react';
-import Nav from './components/nav-bar/Nav';
+import Nav from './components/NavBar/Nav';
 import SideBar from './components/SideBar/SideBar';
 import ProductStack from './components/ProductStack/ProductStack';
 import './App.css';
 
 class App extends Component {
   state = {
-    toggle: false,
+    toggle: true,
   };
   toggleHandler = () => {
     console.log(this.state.toggle);
