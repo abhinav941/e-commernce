@@ -1,52 +1,26 @@
-import fs from 'fs';
-import dirPath from '../util/path';
+import sequelize from '../util/database';
+import Sequelize from 'sequelize';
 
-const path = dirPath('data/product.json');
-
-const readFilefrom = (cb: Function) => {
-  fs.readFile(path, (err: any, fileContent: any) => {
-    if (err) {
-      return cb([]);
-    }
-    cb(JSON.parse(fileContent.toString()));
-  });
-};
-
-interface ConstructorProps {
-  title: String;
-  imageUrl: string;
-  description: string;
-  price: number;
-}
-class Product {
-  data: ConstructorProps = {
-    title: '',
-    imageUrl: '',
-    description: '',
-    price: 0,
-  };
-
-  constructor({ title, imageUrl, description, price }: ConstructorProps) {
-    this.data = {
-      title,
-      imageUrl,
-      description,
-      price,
-    };
-  }
-
-  save() {
-    readFilefrom((products: any) => {
-      products.push(this.data);
-      fs.writeFile(path, JSON.stringify(products), (err: any) => {
-        console.error(err);
-      });
-    });
-  }
-
-  static fetchAll(cb: Function) {
-    return readFilefrom(cb);
-  }
-}
+const Product = sequelize.define('product', {
+    id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    title: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    price: {
+        type: Sequelize.DOUBLE,
+        allowNull: false,
+    },
+    imageURL: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    description: Sequelize.STRING,
+});
 
 export default Product;
