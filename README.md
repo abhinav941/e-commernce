@@ -1,6 +1,6 @@
-# E-commerce site 
-## created by `Abhishek-Shr`
+# E-commerce
 
-- `npm install` / `yarn install` to install node_modules
-- `npm start` / `yarn start` to run project
-- `yarn server` to run json server 
+## Client and server 
+
+- server created by Abhinav Rao( using node )
+- UI created by Abhishek Sharma ( using React)
