@@ -12,7 +12,6 @@ const sidebar = (props) => {
         <img className="profileImage" src={require('../../assests/profile_image.jpeg')} alt="profile_Image" />
         <div className="username">Abhishek Sharma</div>
       </div>
-      <div>Hello</div>
       <div className="sidebarContent">
         <ul>
           <li>
