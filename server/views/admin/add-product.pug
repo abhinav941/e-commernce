@@ -1,0 +1,23 @@
+extends ../includes/default-header.pug
+
+
+
+block content
+  form(action="/admin/add-product",method="POST",class="card")
+    h2 Product
+    br
+    .form-control
+      label(for="title") Title
+      input(placeholder="Enter title name!",name="title",type="text")
+    .form-control
+      label(for="imageUrl") Image URL
+      input(type="text",name="imageUrl",placeholder="Copy image path here")
+    .form-control
+      label(for="description") Description
+      textarea(placeholder="Describe book",name="description",rows="5")
+    .form-control
+      label(for="price") Price
+      input(type="number",placeholder="Enter price",name="price")
+    button(type="submit") Submit
+
+
