@@ -1,0 +1,62 @@
+.sidebar{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    top:66.7px;
+    height: 100%;
+    width: 230px;
+    background-color: #86d4d4;
+    border-top: 2px solid rgba(0, 0, 0, .2);
+    z-index:1;
+    transform: translateX(-100%);
+    transition: transform .5s ease;
+}
+
+.sidebar.open{
+    transform: translateX(0%);
+}
+
+/* @keyframes slide{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(250px);
+    }
+} */
+
+.sidebar ul{
+    list-style: none;
+    width: 230px;
+    box-sizing: border-box;
+    padding: 0;
+} 
+
+.sidebar .profile{
+    padding-top: 20px;
+    /* border-bottom: 1px solid #105757; */
+}
+
+.sidebar .profileImage{
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    width:150px;
+}
+
+.sidebar .username{
+    font-weight: 650;
+    font-size: 20px;
+}
+
+.sidebar .sidebarContent li{
+    line-height: 50px; 
+    width: 100%;
+    border-bottom: 1px solid  rgba(34, 112, 126,0.4);
+
+}
+.sidebar .sidebarContent li a{
+    text-decoration: none;
+    color: #032222;
+    font-weight: 600;
+}

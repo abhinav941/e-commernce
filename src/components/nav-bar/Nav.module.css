@@ -1,0 +1,28 @@
+.nav{
+    display: flex;
+    position:fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #86d4d4;
+    width: 100%;
+    flex-direction: row;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.nav .logoHeader{
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.nav .logo{
+    font-size: 50px;
+}
+
+.nav .headerName{
+    font-size: larger;
+    font-weight: 600;
+}
+
