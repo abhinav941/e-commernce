@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductItem from './ProductItem/ProductItem';
+import ProductItem from './ProductItem';
 import { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -9,26 +9,29 @@ display: grid;
 position: absolute;
 top:100px;
 left:250px;
-grid-template-columns: repeat(5,250px);
+grid-template-columns: repeat(5,240px);
 grid-auto-rows: minmax(200px,auto);
-padding-top: 10px;
+grid-column-gap:10px;
+grid-row-gap:15px;
+// border-bottom:1px solid #bdbdbd;
+box-sizing:border-box;
 `
 
 class productStack extends Component {
   state = {
-    imageUrl: [],
+    products: [],
   };
   componentDidMount() {
     axios.get('http://localhost:8080/images').then((response) => {
-      this.setState({ imageUrl: response.data.image_url });
+      this.setState({ products: response.data.products });
       // console.log(response.data.image_url);
     });
   }
   render() {
     let products = null;
-    if (this.state.imageUrl) {
-      products = this.state.imageUrl.map((image) => {
-        return <ProductItem className="grid_item" key={image.url} url={image.url} price={image.price} />;
+    if (this.state.products) {
+      products = this.state.products.map((product) => {
+        return <ProductItem className="grid_item" key={product.url} url={product.url} price={product.price} name={product.name}/>;
       });
     }
     return <Stack>{products}</Stack>;

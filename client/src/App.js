@@ -1,8 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
-import Nav from './components/NavBar/Nav';
-import SideBar from './components/SideBar/SideBar';
-import ProductStack from './components/ProductStack/ProductStack';
+import Nav from './components/NavBar';
+import SideBar from './components/SideBar';
+import ProductStack from './components/ProductStack';
 import './App.css';
 
 class App extends Component {
