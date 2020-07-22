@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBar from '../Search-bar/SearchBar';
+import SearchBar from '../SearchBar';
 import NavLinks from '../Nav-links/NavLinks';
-import Burger from '../Burger/Burger';
+import Burger from '../Burger';
 import styled from 'styled-components';
 
 const Navi=styled.nav`
