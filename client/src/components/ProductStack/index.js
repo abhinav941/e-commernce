@@ -7,14 +7,17 @@ import styled from 'styled-components';
 const Stack=styled.div`
 display: grid;
 position: absolute;
-top:100px;
+top:70px;
 left:250px;
 grid-template-columns: repeat(5,240px);
-grid-auto-rows: minmax(200px,auto);
+grid-auto-rows: minmax(350px,auto);
 grid-column-gap:10px;
-grid-row-gap:15px;
-// border-bottom:1px solid #bdbdbd;
+grid-row-gap:10px;
 box-sizing:border-box;
+/* padding-bottom:20px; */
+margin-bottom:20px;
+background-color:transparent;
+border-radius:10px;
 `
 
 class productStack extends Component {

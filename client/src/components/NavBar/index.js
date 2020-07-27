@@ -9,7 +9,7 @@ display: flex;
 position: fixed;
 justify-content: space-between;
 align-items: center;
-background-color: #86d4d4;
+background-color: #4ecccc;
 width: 100%;
 flex-direction: row;
 box-sizing: border-box;
@@ -22,10 +22,10 @@ z-index: 2;
   padding-left: 30px;
 }
 .logo{
-  font-size: 50px;
+  font-size: 40px;
 }
 .headerName{
-  font-size: larger;
+  font-size: x-large;
   font-weight: 600; 
 }
 `
