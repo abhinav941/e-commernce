@@ -1,24 +1,23 @@
-import React from 'react';
-import { Component } from 'react';
-import Nav from './components/NavBar';
-import SideBar from './components/SideBar';
+import React,{ Component } from 'react';
+import HomePage from './container/HomePage';
+import Login from './container/Login';
+import Registration from './container/Registration';
 import ProductStack from './components/ProductStack';
+
+import { Route,Switch } from 'react-router-dom';
+
 import './App.css';
 
 class App extends Component {
-  state = {
-    toggle: true,
-  };
-  toggleHandler = () => {
-    console.log(this.state.toggle);
-    this.setState((prevState, prevprops) => ({ toggle: !prevState.toggle }));
-  };
   render() {
     return (
       <div className="App">
-        <Nav toggle={this.toggleHandler} />
-        <SideBar show={this.state.toggle} />
-        <ProductStack />
+        <ProductStack/>        
+        <Route path="/"  component={HomePage}/>
+        <Switch>
+        <Route path="/registration" exact component={Registration} />
+        <Route path="/login" component={Login} />
+        </Switch>
       </div>
     );
   }
