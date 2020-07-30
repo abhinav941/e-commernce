@@ -1,26 +1,11 @@
 import React from 'react';
 import ProductItem from './ProductItem';
-import { Component } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 
-const Stack=styled.div`
-display: grid;
-position: absolute;
-top:70px;
-left:250px;
-grid-template-columns: repeat(5,240px);
-grid-auto-rows: minmax(350px,auto);
-grid-column-gap:10px;
-grid-row-gap:10px;
-box-sizing:border-box;
-/* padding-bottom:20px; */
-margin-bottom:20px;
-background-color:transparent;
-border-radius:10px;
-`
+import { Component } from 'react';
+import { StackStyle } from './style';
 
-class productStack extends Component {
+class ProductStack extends Component {
   state = {
     products: [],
   };
@@ -37,8 +22,8 @@ class productStack extends Component {
         return <ProductItem className="grid_item" key={product.url} url={product.url} price={product.price} name={product.name}/>;
       });
     }
-    return <Stack>{products}</Stack>;
+    return <StackStyle>{products}</StackStyle>;
   }
 }
 
-export default productStack;
+export default ProductStack;

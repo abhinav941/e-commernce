@@ -1,34 +1,25 @@
-import React from 'react';
-import { Component } from 'react';
-import Nav from './components/NavBar';
-import SideBar from './components/SideBar';
-import ProductStack from './components/ProductStack';
-import './App.css';
+import React,{ Component } from 'react';
+import HomePage from './container/HomePage';
 import Login from './components/Login';
-import Registration from './components/Registration';
-import { BrowserRouter,Route } from 'react-router-dom';
+import Spinner from './components/Spinner';
+import ProductStack from './components/ProductStack';
+
+import { Route,Switch } from 'react-router-dom';
+
+import './App.css';
 
 class App extends Component {
-  state = {
-    toggle: true,
-  };
-  toggleHandler = () => {
-    console.log(this.state.toggle);
-    this.setState((prevState, prevprops) => ({ toggle: !prevState.toggle }));
-  };
   render() {
     return (
-      <BrowserRouter>
       <div className="App">
-        <Nav toggle={this.toggleHandler} />
-        <SideBar show={this.state.toggle} />
-        <ProductStack />
-        {/* <Login/> */}
-        {/* <Route path="/login" component={Login} /> */}
+        <Switch>
+        <Route path="/"  component={HomePage}/>
         {/* <Route path="/sign-up" component={Registration} /> */}
-        {/* <Registration/> */}
+        </Switch>
+        <Route path="/login" component={Login} />
+        <ProductStack/>
+        <Spinner/>
       </div>
-      </BrowserRouter>
     );
   }
 }

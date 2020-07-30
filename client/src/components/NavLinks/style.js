@@ -1,9 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import Login from '../Login';
 
-const Navlinks = styled.ul`
+export const NavLinkStyle = styled.ul`
   display:flex;
   align-items:flex-start;
   list-style:none;
@@ -31,11 +28,11 @@ const Navlinks = styled.ul`
     padding-top:10px;
   }
   li:hover{
-    background-color:#e6e8e8;
+    background-color:#f7f7f7;
   }
   .active{
     border-radius:5px;
-    background-color:#e6e8e8;
+    background-color:#f7f7f7;
   }
   .drop{
     display:flex;
@@ -71,31 +68,3 @@ const Navlinks = styled.ul`
     background-color:#f7f7f7;
   }
 `;
-
-const navLinks = () => {
-  return (
-      <Navlinks>
-        <li>
-          <NavLink to="/Home" >Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/Products">Products</NavLink>
-        </li>
-        <li>
-          <NavLink to="/Cart">Cart</NavLink>
-        </li>
-        <li className="drop"><div>Account <i class="fa fa-angle-down" aria-hidden="true"></i></div>
-          <div className="drop-menu">
-            <NavLink to="/" className="link">Profile</NavLink>
-            <NavLink to="/login" className="link">Login</NavLink>
-            <NavLink to="/sign-up" className="link">Sign Up</NavLink>
-            <NavLink to="/" className="link">My Orders</NavLink>
-            <NavLink to="/" className="link">My Orders</NavLink>
-            <NavLink to="/" className="link">Sign Out</NavLink>
-          </div>
-        </li>
-      </Navlinks>
-  );
-};
-
-export default navLinks;

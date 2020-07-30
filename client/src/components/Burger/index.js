@@ -1,35 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import { BurgerStyle } from './style';
 
-const Burger=styled.div`
-display: flex;
-flex-direction: column;
-width:30px;
-height: 30px;
-background-color: transparent;
-border: 2px solid rgba(255,255,255,0.8);
-border-radius: 2px;
-padding:2px 0;
-margin-left:-120px;
-div{
-    width:20px;
-    height: 4px;
-    background-color: rgba(255,255,255,.92);
-    margin: auto;
-    border-radius: 2px;
-}
-`
-
-
-const burger=(props)=>{
+const Burger=(props)=>{
     
     return(
-        <Burger onClick={props.click}>
+        <BurgerStyle onClick={props.click}>
             <div></div>
             <div></div>
             <div></div>
-        </Burger>
+        </BurgerStyle>
     )
 }
 
-export default burger;
+export default Burger;
