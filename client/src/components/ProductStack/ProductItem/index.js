@@ -1,8 +1,7 @@
 import React from 'react';
+
 import {ProductItemStyle} from './style';
 import { HeartFilled } from '@ant-design/icons';
-
-
 
 const productItem=(props)=>{
     return(

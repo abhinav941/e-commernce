@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Backdrop=styled.div`
     position:fixed;
     width:100vw;

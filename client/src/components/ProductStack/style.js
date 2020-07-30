@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const StackStyle=styled.div`
 display: grid;
 position: absolute;

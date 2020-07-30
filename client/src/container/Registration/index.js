@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Backdrop } from '../Backdrop';
+import { Backdrop } from '../../components/Backdrop';
 import { RegisterStyle } from './style';
 import { Button } from 'antd';
 import {GooglePlusCircleFilled,FacebookFilled,TwitterCircleFilled,LinkedinOutlined,CloseOutlined  } from "@ant-design/icons";

@@ -2,12 +2,11 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { LoginStyle } from './style';  
-import { Backdrop } from '../Backdrop';
+import { Backdrop } from '../../components/Backdrop';
 import { Button } from 'antd';
 import {GooglePlusCircleFilled,TwitterCircleFilled,FacebookFilled,CloseOutlined  } from "@ant-design/icons";
 
 const Login=(props)=>{
-    // console.log(props);
     const redirectTo=()=>{
         props.history.push("/");
     }

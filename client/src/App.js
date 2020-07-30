@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import HomePage from './container/HomePage';
-import Login from './components/Login';
-import Registration from './components/Registration';
+import Login from './container/Login';
+import Registration from './container/Registration';
 import ProductStack from './components/ProductStack';
 
 import { Route,Switch } from 'react-router-dom';
