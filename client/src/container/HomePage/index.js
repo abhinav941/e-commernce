@@ -9,7 +9,10 @@ const HomePage=(props)=>{
     useEffect(()=>{
         setShowLogin(false);
         setTimeout(()=>{
+            console.log(props.location.pathname);
+            if(props.location.pathname!=='/registration'){
             props.history.push("/login");
+        }
         },5000)
         },[showLogin,props.history]);
 
