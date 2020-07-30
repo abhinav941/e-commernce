@@ -1,31 +1,33 @@
-import React,{useState,useEffect}  from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductStack from '../../components/ProductStack';
 import SideBar from '../../components/SideBar';
 import Nav from '../../components/NavBar';
 
-const HomePage=(props)=>{
+const HomePage = props => {
     const [show, setShow] = useState(true);
     const [showLogin, setShowLogin] = useState(true);
-    useEffect(()=>{
+    useEffect(() => {
         setShowLogin(false);
-        setTimeout(()=>{
+        setTimeout(() => {
             console.log(props.location.pathname);
-            if(props.location.pathname!=='/registration'){
-            props.history.push("/login");
-        }
-        },5000)
-        },[showLogin,props.history]);
+            if (props.location.pathname !== '/registration') {
+                props.history.push('/login');
+            }
+        }, 5000);
+    }, [showLogin, props.history]);
 
-    const toggleHandler=()=>{ setShow((prevState)=>{
-        return !prevState;
-    })
-}
-    return(<div>
-        <Nav toggle={toggleHandler} />
-        <SideBar show={show} />
-        <ProductStack />
+    const toggleHandler = () => {
+        setShow(prevState => {
+            return !prevState;
+        });
+    };
+    return (
+        <div>
+            <Nav toggle={toggleHandler} />
+            <SideBar show={show} />
+            <ProductStack />
         </div>
     );
-}
+};
 
 export default HomePage;

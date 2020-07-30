@@ -2,29 +2,44 @@ import React from 'react';
 import ProductItem from './ProductItem';
 import axios from 'axios';
 import Spinner from '../Spinner';
+import service from './services';
 
 import { Component } from 'react';
 import { StackStyle } from './style';
 
 class ProductStack extends Component {
-  state = {
-    products: null,
-  };
-  componentDidMount() {
-    axios.get('http://localhost:8080/images').then((response) => {
-      this.setState({ products: response.data.products });
-      // console.log(response.data.image_url);
-    });
-  }
-  render() {
-    let products = <Spinner/>;
-    if (this.state.products) {
-      products = this.state.products.map((product) => {
-        return <ProductItem className="grid_item" key={product.url} url={product.url} price={product.price} name={product.name}/>;
-      });
+    state = {
+        products: null,
+        loading: true,
+    };
+    async componentWillMount() {
+        const data = await service.get();
+        this.setState({
+            products: data,
+            loading: false,
+        });
     }
-    return <StackStyle>{products}</StackStyle>;
-  }
+    render() {
+        let products = <Spinner />;
+        if (!this.state.loading) {
+            products = (
+                <StackStyle>
+                    {this.state.products.map(product => {
+                        return (
+                            <ProductItem
+                                className="grid_item"
+                                key={product.url}
+                                url={product.url}
+                                price={product.price}
+                                name={product.name}
+                            />
+                        );
+                    })}
+                </StackStyle>
+            );
+        }
+        return <>{products}</>;
+    }
 }
 
 export default ProductStack;
