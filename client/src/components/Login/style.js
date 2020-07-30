@@ -5,8 +5,8 @@ export const LoginStyle=styled.div`
     position:relative;
     flex-direction:column;
     width:400px;
-    height:480px;
-    transform: translate(140%,25%);
+    height:520px;
+    transform: translate(39vw,10vh);
     border:2px solid #12c4c7;
     outline:1px solid #12c4c7;
     background-color:#f7ffff;
@@ -14,11 +14,11 @@ export const LoginStyle=styled.div`
     h1{
         padding-top:35px;
         align-self: flex-start;
-        margin-left:60px;
+        margin-left:40px;
     }
-    h3{
+    h3.descrip{
         align-self: flex-start;
-        margin-left:60px;
+        margin-left:40px;
     }
     form{
         width: 90%;
@@ -27,7 +27,7 @@ export const LoginStyle=styled.div`
         display:flex;
         flex-direction:column;
         justify-content:space-between;
-        padding:40px;
+        padding:20px;
     }
     a{
         align-self: flex-start;

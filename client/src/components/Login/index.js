@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { LoginStyle } from './style';  
 import { Backdrop } from '../Backdrop';
 import { Button } from 'antd';
 import {GooglePlusCircleFilled,TwitterCircleFilled,FacebookFilled,CloseOutlined  } from "@ant-design/icons";
 
 const Login=(props)=>{
-    console.log(props);
+    // console.log(props);
     const redirectTo=()=>{
         props.history.push("/");
     }
@@ -14,7 +15,7 @@ const Login=(props)=>{
         <LoginStyle>
         <CloseOutlined  className="close" onClick={redirectTo}/>
         <h1>Login</h1>
-        <h3>Enter Your details to continue.</h3>
+        <h3 className='descrip'>Enter Your details to continue.</h3>
             <form>
                 <div className="formatted-input">
                 <label className="label" for="username">UserName</label>
@@ -29,7 +30,9 @@ const Login=(props)=>{
                 <a href="#">Forget Password?</a>
                 <Button type="primary">Login</Button>
                 <div className="connect-bar">
-                <h4>Or Sign Up Using</h4>
+                    <h4>Don't have an account? <Link to='/registration'>Sign Up Here</Link></h4>
+                    <h3>Or</h3>
+                <h4> Sign Up Using</h4>
                 <GooglePlusCircleFilled  className="google-icon"/>
                 <TwitterCircleFilled className="twitter-icon"/>
                 <FacebookFilled className="facebook-icon"/>

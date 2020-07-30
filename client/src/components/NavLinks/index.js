@@ -7,7 +7,7 @@ const NavLinks = () => {
   return (
       <NavLinkStyle>
         <li>
-          <NavLink to="/Home" >Home</NavLink>
+          <NavLink to="/" >Home</NavLink>
         </li>
         <li>
           <NavLink to="/Products">Products</NavLink>
